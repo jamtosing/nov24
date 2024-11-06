@@ -4,36 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embedded Google Form</title>
-    <style>
-        /* Ensure the iframe is responsive */
-        iframe {
-            width: 100%;
-            border: none;
-            min-height: 1428; /* Set a minimum height */
-        }
-    </style>
 </head>
 <body>
-    <h1 style="text-align:center;>Please fill out the form below:</h1>
-    
-    <!-- Embedded Google Form iframe -->
-    <iframe id="googleForm" 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSfVewVc4GZ28p5qEbZ8Jqa9r-yhBCb8m3GH8tt3V1sbWe5RKA/viewform?embedded=true" 
+    <h1>Please fill out the form below:</h1>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVewVc4GZ28p5qEbZ8Jqa9r-yhBCb8m3GH8tt3V1sbWe5RKA/viewform?embedded=true" 
+            width="640" 
+            height="1428" 
             frameborder="0" 
             marginheight="0" 
             marginwidth="0">
         Loading…
     </iframe>
-
-    <script>
-        // Function to resize the iframe based on its content
-        window.addEventListener('message', function(event) {
-            if (event.origin === 'https://docs.google.com') {
-                var iframe = document.getElementById('googleForm');
-                var height = event.data.height;
-                iframe.style.height = height + 'px';  // Set iframe height dynamically
-            }
-        });
-    </script>
 </body>
 </html>

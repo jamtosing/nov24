@@ -9,12 +9,12 @@
         iframe {
             width: 100%;
             border: none;
-            min-height: 1428; /* Set a minimum height */
+            min-height: 1000px; /* Set a minimum height */
         }
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Please fill out the form below:</h1>
+    <h1>Please fill out the form below:</h1>
     
     <!-- Embedded Google Form iframe -->
     <iframe id="googleForm" 
@@ -31,7 +31,13 @@
             if (event.origin === 'https://docs.google.com') {
                 var iframe = document.getElementById('googleForm');
                 var height = event.data.height;
-                iframe.style.height = height + 'px';  // Set iframe height dynamically
+                
+                // Adjust iframe height
+                iframe.style.height = height + 'px';
+                
+                // Adjust page height (body or document) to match iframe height
+                document.body.style.height = height + 'px';
+                document.documentElement.style.height = height + 'px';
             }
         });
     </script>

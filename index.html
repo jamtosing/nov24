@@ -9,7 +9,7 @@
         iframe {
             width: 100%;
             border: none;
-            min-height: 1428px; /* Set a minimum height */
+            min-height: 1428; /* Set a minimum height */
         }
     </style>
 </head>
@@ -31,13 +31,7 @@
             if (event.origin === 'https://docs.google.com') {
                 var iframe = document.getElementById('googleForm');
                 var height = event.data.height;
-                
-                // Adjust iframe height
-                iframe.style.height = height + 'px';
-                
-                // Adjust page height (body or document) to match iframe height
-                document.body.style.height = height + 'px';
-                document.documentElement.style.height = height + 'px';
+                iframe.style.height = height + 'px';  // Set iframe height dynamically
             }
         });
     </script>

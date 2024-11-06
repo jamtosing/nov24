@@ -11,17 +11,45 @@
             margin: 0;
             padding: 0;
         }
+        
+        /* Banner container */
+        .banner {
+            background-color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Logo inside banner */
+        .banner-logo {
+            width: 80px;
+            height: auto;
+        }
+
+        /* Center image below the form */
+        .logo {
+            width: 80px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+        }
+        
         h1 {
             margin-top: 20px;
         }
+        
         .p {
             margin: 0px;
         }
+        
         .form-container {
             display: flex;
             justify-content: center;
             margin: 20px;
         }
+        
         .form-container iframe {
             width: 100%;
             max-width: 700px;
@@ -32,6 +60,7 @@
             box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
             overflow: auto; /* Enables scrolling within the iframe */
         }
+        
         button {
             display: inline-block;
             margin: 20px;
@@ -40,13 +69,6 @@
             font-size: 16px;
             cursor: pointer;
         }
-        .logo {
-            Width: 80px;
-            Height: 80px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
         
         /* Mobile-specific styles */
         @media (max-width: 768px) {
@@ -54,12 +76,31 @@
                 justify-content: flex-start; /* Align iframe to the left */
                 padding-left: 10px; /* Optional padding for better spacing */
             }
+            
+            .banner {
+                justify-content: center; /* Center logo on mobile */
+            }
+        }
+        
+        /* Desktop-specific styles */
+        @media (min-width: 769px) {
+            .banner {
+                justify-content: flex-start; /* Align logo to the left on desktop */
+                padding-left: 20px;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- Banner with logo at the top -->
+    <div class="banner">
+        <img src="https://github.com/jamtosing/votes/raw/refs/heads/main/JTSlogo" alt="Logo" class="banner-logo">
+    </div>
+
     <h1>Song Request Voting Form</h1>
     <h4>Please fill out the form below:</h4>
+
     <div class="form-container">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVewVc4GZ28p5qEbZ8Jqa9r-yhBCb8m3GH8tt3V1sbWe5RKA/viewform?embedded=true" 
                 frameborder="0" 
@@ -68,9 +109,13 @@
             Loading…
         </iframe>
     </div>
+
     <h3>Having trouble viewing the form?</h3>
     <p>You may need to click "Allow cookies" and sign in to your Google account to use this form</p>
     <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfVewVc4GZ28p5qEbZ8Jqa9r-yhBCb8m3GH8tt3V1sbWe5RKA/viewform?usp=sf_link'">Open Form in New Tab</button>
+
+    <!-- Centered logo image at the bottom of the page -->
     <img src="https://github.com/jamtosing/votes/raw/refs/heads/main/JTSlogo" alt="Logo" class="logo">
+
 </body>
 </html>

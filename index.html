@@ -25,6 +25,7 @@
         .form-container iframe {
             width: 100%;
             max-width: 640px;
+            min-width: 320px; /* Set a minimum width for mobile devices */
             height: 80vh; /* Adjusts height to 80% of the viewport */
             border: none;
             border-radius: 25px;
@@ -38,13 +39,6 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-        }
-        .M6tHv {
-            visibility: invisible;
-        }
-        .Mh0NNb.Mp2Z0b.vDaB1c.xbgI6e.misTTe {
-            visibility: invisible;
-            display: none !important;
         }
     </style>
 </head>
@@ -62,26 +56,5 @@
     <h3>Having trouble viewing the form?</h3>
     <p>You may need to click "Allow cookies" and sign in to your Google account to use this form</p>
     <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfVewVc4GZ28p5qEbZ8Jqa9r-yhBCb8m3GH8tt3V1sbWe5RKA/viewform?usp=sf_link'">Open Form in New Tab</button>
-
-    <script>
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.addedNodes.length > 0) {
-                    mutation.addedNodes.forEach((node) => {
-                        if (node.nodeType === 1 && node.classList.contains('Mh0NNb') &&
-                            node.classList.contains('Mp2Z0b') &&
-                            node.classList.contains('vDaB1c') &&
-                            node.classList.contains('xbgI6e') &&
-                            node.classList.contains('misTTe')) {
-                            node.style.display = 'none';
-                        }
-                    });
-                }
-            });
-        });
-
-        // Start observing the entire document for changes
-        observer.observe(document.body, { childList: true, subtree: true });
-    </script>
 </body>
 </html>

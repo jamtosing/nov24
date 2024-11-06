@@ -5,26 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embedded Google Form</title>
     <style>
+        body {
+            text-align: center;
+        }
         iframe {
             width: 100%;
+            max-width: 640px;
             border: none;
         }
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Please fill out the form below:</h1>
-    <iframe id="googleForm" src="https://docs.google.com/forms/d/e/1FAIpQLSfVewVc4GZ28p5qEbZ8Jqa9r-yhBCb8m3GH8tt3V1sbWe5RKA/viewform?embedded=true"></iframe>
-    
-    <h3 style="text-align: center;">Having trouble viewing the form?</h3>
-    <button style="display:block; margin:auto;" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfVewVc4GZ28p5qEbZ8Jqa9r-yhBCb8m3GH8tt3V1sbWe5RKA/viewform?usp=sf_link'">Click Here</button>
-    
+    <h1>Please fill out the form below:</h1>
+    <iframe id="googleForm" src="https://docs.google.com/forms/d/e/1FAIpQLSfVewVc4GZ28p5qEbZ8Jqa9r-yhBCb8m3GH8tt3V1sbWe5RKA/viewform?embedded=true" 
+            onload="resizeIframe()" marginheight="0" marginwidth="0">
+        Loading…
+    </iframe>
+    <h3>Having trouble viewing the form?</h3>
+    <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfVewVc4GZ28p5qEbZ8Jqa9r-yhBCb8m3GH8tt3V1sbWe5RKA/viewform?usp=sf_link'">Click Here</button>
+
     <script>
         function resizeIframe() {
-            const iframe = document.getElementById('googleForm');
-            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+            const iframe = document.getElementById("googleForm");
+
+            // Check for iframe content height and set iframe height accordingly
+            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
         }
-        // Add an event listener to resize once the form is loaded
-        document.getElementById('googleForm').addEventListener('load', resizeIframe);
+
+        // Continuously check for iframe resizing in case of dynamic content height changes
+        window.addEventListener('resize', resizeIframe);
     </script>
 </body>
 </html>

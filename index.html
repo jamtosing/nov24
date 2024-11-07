@@ -17,6 +17,7 @@
             display: flex;
             align-items: center;
             padding: 10px;
+            justify-content: space-between;
         }
 
         /* Logo styling */
@@ -25,7 +26,7 @@
             height: 80px;
             border-radius: 50%;
             object-fit: cover;
-            margin-right: 10px; /* Adds space between logo and text */
+            margin-right: 10px;
         }
 
         /* Title styling */
@@ -36,7 +37,7 @@
         }
 
         h4 {
-            margin-top: 0px;
+            margin-top: 0;
         }
 
         /* Form container styling */
@@ -61,11 +62,10 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            align-items: center;
             background-color: #fff;
             border-radius: 24px;
-            border-style: none;
-            box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px, rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
             text-align: center;
             width: auto;
         }
@@ -98,32 +98,19 @@
                 text-align: center;
             }
         }
-
-        /* Desktop-specific styles */
-        @media (min-width: 769px) {
-            .header {
-                justify-content: center;
-            }
-            .header-logo {
-                margin-right: 20px;
-            }
-        }
     </style>
 </head>
 <body>
 
     <!-- Header with logo and title -->
     <div class="header">
-        <img src="https://github.com/jamtosing/votes/raw/refs/heads/main/JTSlogo" alt="Logo" class="header-logo">
+        <img src="https://github.com/jamtosing/votes/raw/refs/heads/main/JTSlogo" alt="Jam To Sing Logo" class="header-logo">
         <h1 class="header-title">Song Request Voting</h1>
     </div>
     
     <h4>Please fill out the form below:</h4>
     <div class="form-container">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVewVc4GZ28p5qEbZ8Jqa9r-yhBCb8m3GH8tt3V1sbWe5RKA/viewform?embedded=true" 
-                frameborder="0" 
-                marginheight="0" 
-                marginwidth="0">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfVewVc4GZ28p5qEbZ8Jqa9r-yhBCb8m3GH8tt3V1sbWe5RKA/viewform?embedded=true">
             Loading…
         </iframe>
     </div>

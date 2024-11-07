@@ -16,7 +16,6 @@
         .header {
             display: flex;
             align-items: center;
-            justify-content: center;
             padding: 10px;
         }
 
@@ -30,7 +29,9 @@
         }
 
         /* Title styling */
-        h1 {
+        .header-title {
+            flex-grow: 1;
+            text-align: center;
             margin: 0;
         }
 
@@ -48,8 +49,8 @@
         .form-container iframe {
             width: 100%;
             max-width: 700px;
-            min-width: 640px; /* Minimum width to avoid overlapping text box */
-            height: 80vh; /* Adjusts height to 80% of the viewport */
+            min-width: 640px;
+            height: 80vh;
             border: none;
             border-radius: 25px;
             box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
@@ -61,29 +62,12 @@
             font-size: 16px;
             cursor: pointer;
             align-items: center;
-            appearance: none;
             background-color: #fff;
             border-radius: 24px;
             border-style: none;
             box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
-            box-sizing: border-box;
-            color: #3c4043;
-            display: inline-flex;
-            justify-content: center;
-            letter-spacing: .25px;
-            line-height: normal;
-            max-width: 100%;
-            overflow: visible;
-            position: relative;
             text-align: center;
-            text-transform: none;
-            transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
             width: auto;
-            will-change: transform,opacity;
-            z-index: 0;
         }
 
         button:hover {
@@ -98,51 +82,30 @@
 
         button:focus {
             outline: none;
-            border: 2px solid #D3D3D3;
-        }
-        
-        button:not(:disabled) {
-            box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-        }
-
-        button:not(:disabled):hover {
-            box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
-        }
-
-        button:not(:disabled):focus {
-            box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-        }
-
-        button:not(:disabled):active {
-            box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
-        }
-
-        button:disabled {
-            box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-        }
-
-        .logo {
-            width: 80px;
-            height: 80px;
-            display: block;
-            margin: 20px auto;
-            border-radius: 50%;
+            border: 2px solid #36454F;
         }
 
         /* Mobile-specific styles */
         @media (max-width: 768px) {
             .header {
-                flex-direction: column; /* Stack logo above text */
+                flex-direction: column;
+                text-align: center;
             }
             .header-logo {
-                margin: 0 0 10px 0; /* Center logo with spacing below */
+                margin: 0 0 10px 0;
+            }
+            .header-title {
+                text-align: center;
             }
         }
 
         /* Desktop-specific styles */
         @media (min-width: 769px) {
             .header {
-                justify-content: center; /* Logo to the left of text */
+                justify-content: center;
+            }
+            .header-logo {
+                margin-right: 20px;
             }
         }
     </style>
@@ -152,7 +115,7 @@
     <!-- Header with logo and title -->
     <div class="header">
         <img src="https://github.com/jamtosing/votes/raw/refs/heads/main/JTSlogo" alt="Logo" class="header-logo">
-        <h1>Song Request Voting</h1>
+        <h1 class="header-title">Song Request Voting</h1>
     </div>
     
     <h4>Please fill out the form below:</h4>
@@ -168,9 +131,6 @@
     <h3>Having trouble viewing the form?</h3>
     <p>You may need to click "Allow cookies" and sign in to your Google account to use this form</p>
     <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfVewVc4GZ28p5qEbZ8Jqa9r-yhBCb8m3GH8tt3V1sbWe5RKA/viewform?usp=sf_link'">Open Form in New Tab</button>
-
-    <!-- Logo image centered at the bottom of the page -->
-    <img src="https://github.com/jamtosing/votes/raw/refs/heads/main/JTSlogo" alt="Logo" class="logo">
 
 </body>
 </html>

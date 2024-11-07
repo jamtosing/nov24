@@ -16,7 +16,7 @@
         .header {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             padding: 10px;
         }
 
@@ -29,16 +29,9 @@
             margin-right: 10px;
         }
 
-        .logo {
-            width: 80px;
-            height: 80px;
-            display: block;
-            margin: 20px auto;
-            border-radius: 50%;
-        }
-
         /* Title styling */
         .header-title {
+            flex-grow: 1;
             text-align: center;
             margin: 0;
             position: relative;
@@ -114,7 +107,6 @@
     <div class="header">
         <img src="https://github.com/jamtosing/votes/raw/refs/heads/main/JTSlogo" alt="Jam To Sing Logo" class="header-logo">
         <h1 class="header-title">Song Request Voting</h1>
-        <div style="flex: 1;"></div> <!-- This div creates space to balance the header -->
     </div>
     
     <h4>Please fill out the form below:</h4>

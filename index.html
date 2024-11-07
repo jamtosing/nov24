@@ -1,5 +1,3 @@
-When looking at the page on a desktop screen, the header at the top of the page is space-between and is horizontally central between the logo and the right side of the page. I want it to be horizontally central to the left and right side of the page itself (regardless of the size of the logo). Can you make this happen without changing anything else in the code?
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +16,8 @@ When looking at the page on a desktop screen, the header at the top of the page 
         .header {
             display: flex;
             align-items: center;
+            justify-content: center;
             padding: 10px;
-            justify-content: space-between;
         }
 
         /* Logo styling */
@@ -31,11 +29,19 @@ When looking at the page on a desktop screen, the header at the top of the page 
             margin-right: 10px;
         }
 
+        .logo {
+            width: 80px;
+            height: 80px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 50%;
+        }
+
         /* Title styling */
         .header-title {
-            flex-grow: 1;
             text-align: center;
             margin: 0;
+            position: relative;
         }
 
         h4 {
@@ -108,6 +114,7 @@ When looking at the page on a desktop screen, the header at the top of the page 
     <div class="header">
         <img src="https://github.com/jamtosing/votes/raw/refs/heads/main/JTSlogo" alt="Jam To Sing Logo" class="header-logo">
         <h1 class="header-title">Song Request Voting</h1>
+        <div style="flex: 1;"></div> <!-- This div creates space to balance the header -->
     </div>
     
     <h4>Please fill out the form below:</h4>
